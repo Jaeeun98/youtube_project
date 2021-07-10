@@ -3,6 +3,7 @@ import Video from '../video/video';
 import styles from './list.module.css';
 
 const List = (props) => {
+    console.log(props);
     return (
         <ul className={styles.ul}>
             {props.videos.map(video => (
