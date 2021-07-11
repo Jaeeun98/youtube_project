@@ -1,0 +1,17 @@
+.clickVideo {
+    width:70%;
+    color:#fff;
+}
+.clickVideo iframe {
+    width: 100%;
+}
+.channelTitle {
+    opacity: 0.5;
+}
+
+hr {
+    margin:1rem 0;
+    background-color: #fff;
+    opacity: 0.7;
+    border-radius: 20px;
+}

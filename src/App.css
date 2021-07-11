@@ -28,6 +28,7 @@ header {
 }
 
 section {
+  display: flex;
   padding: 2rem;
   margin: 2rem;
   background-color: rgb(255, 255, 255, 0.2);
@@ -41,4 +42,14 @@ button {
 
 li {
   list-style: none;
+}
+
+.detail {
+  width:30%;
+  padding-left:20px;
+}
+.detail li {
+  width:100%;
+  margin:0;
+  padding-bottom:1rem;
 }
