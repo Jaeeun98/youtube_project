@@ -3,13 +3,14 @@ import Video from '../video/video';
 import styles from './list.module.css';
 
 const List = (props) => {
-    console.log(props);
+
+    
     return (
         <ul className={styles.ul}>
             {props.videos.map(video => (
                 <Video
                     video={video}
-                    key={video.id}
+                    key={typeof video.id === 'object' ? video.id.videoId : video.id}
                 />
             ))}
         </ul>
