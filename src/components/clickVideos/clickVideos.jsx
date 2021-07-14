@@ -3,7 +3,7 @@ import styles from './clickVideos.module.css';
 
 const ClickVideos = (props) => {
     return (
-        <div className={styles.clickVideo}>
+    <div className={styles.clickVideo}>
         <iframe
             id="ytplayer"
             type="text/html"
@@ -15,7 +15,7 @@ const ClickVideos = (props) => {
         <div className={styles.title}>
                 <p className={styles.title}>{props.clickVideo.video.snippet.title}</p>
             <p className={styles.channelTitle}>{props.clickVideo.video.snippet.channelTitle}</p>
-            </div>
+        </div>
             <hr />
         <div className={styles.ex}>{props.clickVideo.video.snippet.description}</div>
     </div>

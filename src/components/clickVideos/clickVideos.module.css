@@ -8,14 +8,20 @@
 .channelTitle {
     opacity: 0.5;
 }
-
+.clickVideo > div {
+    margin-top:1rem;
+    font-size:0.8rem;
+    line-height:1.5;
+}
 hr {
     margin:1rem 0;
     background-color: #fff;
-    opacity: 0.7;
+    opacity: 0.1;
     border-radius: 20px;
 }
-
+.ex {
+    padding-right:1rem;
+}
 @media screen and (max-width:1200px) {
     .clickVideo {
         width: 100%;
