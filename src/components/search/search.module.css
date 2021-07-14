@@ -4,6 +4,9 @@
 
 }
 
+.logo {
+    cursor: pointer;
+}
 .form input {
     border: none;
     padding: 0.5rem;

@@ -10,7 +10,7 @@ const ClickVideos = (props) => {
             width="720"
             height="405"
             src={`https://www.youtube.com/embed/${props.clickVideo.video.id}`}
-            frameborder="0" allowfullscreen>
+            frameBorder="0" allowFullScreen>
         </iframe>
         <div className={styles.title}>
                 <p className={styles.title}>{props.clickVideo.video.snippet.title}</p>

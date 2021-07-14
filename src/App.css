@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 header {
@@ -12,28 +13,42 @@ header {
 
 .app {
   width: 100%;
-  height: auto;
+  height: 100vh;
   background: linear-gradient(rgba(65, 63, 99, 1) 0%, rgba(35, 35, 89, 1) 27%, rgba(2, 14, 18, 1) 100%);
   padding-top: 50px;
 }
 
 .wrap {
   width: 70%;
+  height:93%;
   background-color: rgb(15, 0, 82, 0.3);
-  height: auto;
   margin: auto;
-  border-radius: 5px;
+  border-radius: 20px;
   padding: 1.5rem;
 
 }
 
 section {
   display: flex;
+  flex-wrap: wrap;
+  height:83%;
   padding: 2rem;
   margin: 2rem;
   background-color: rgb(255, 255, 255, 0.2);
   border-radius: 5px;
+  overflow-y: scroll;
 }
+ section::-webkit-scrollbar {
+   opacity: 0;
+   width:5px
+ }
+ section::-webkit-scrollbar-thumb {
+  background-color: rgb(150, 150, 150, 0.7);
+  border-radius: 5px;
+  background-clip:padding-box;
+
+ }
+
 
 button {
   border: none;
@@ -42,6 +57,7 @@ button {
 
 li {
   list-style: none;
+  cursor: pointer;
 }
 
 .detail {
@@ -53,3 +69,21 @@ li {
   margin:0;
   padding-bottom:1rem;
 }
+
+@media screen and (max-width:1500px) {
+  .wrap {
+    width:80%;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  .detail {
+    width: 100%;
+    margin-top:3rem;
+  }
+  .detail li {
+    width: 20%;
+    margin-right:0.5rem
+  }
+}
+
