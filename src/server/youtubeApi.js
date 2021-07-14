@@ -14,7 +14,7 @@ class Youtube {
             params : {
                 part : 'snippet',
                 chart : 'mostPopular',
-                maxResults: '5',
+                maxResults: '20',
                 regionCode:'KR',
             }
         })
@@ -26,7 +26,7 @@ class Youtube {
         const response = await this.axios('search', {
             params: {
                 part: 'snippet',
-                maxResults: '5',
+                maxResults: '20',
                 q: text,
                 type: 'video',
             }
