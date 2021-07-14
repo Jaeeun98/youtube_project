@@ -27,11 +27,15 @@ function App() {
     setClickVideos({video});
   }
 
+  const onMoveHome = () => {
+    setClickVideos(null);
+  }
+
   return (
     <div className="app">
       <div className="wrap">
         <header>
-          <Search onSearchList={onSearchList}/>
+          <Search onSearchList={onSearchList} onMoveHome={onMoveHome}/>
         </header>
         <section>
           {clickVideos && <ClickVideos clickVideo={clickVideos} />}

@@ -8,12 +8,10 @@ const Search = props => {
         props.onSearchList(e.target[0].value);
 
         e.target[0].value = '';
-
     }
-
     return (
         <>
-            <span className={styles.logo}>
+            <span className={styles.logo} onClick={() => props.onMoveHome()}>
                 <img src="img/logo.png" alt="logoImg" />
             </span>
             <form className={styles.form} onSubmit={searchList}>
