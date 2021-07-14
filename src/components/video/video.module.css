@@ -12,13 +12,14 @@
     border-radius: 5px;
 }
 .title {
-    height: 2rem;
+    height: 1.8rem;
     overflow: hidden;
 }
 
 .text {
     padding: 0.3rem 0.1rem;
-    line-height: 1.5;
+    line-height: 1.6;
+
 }
 
 .channel {
