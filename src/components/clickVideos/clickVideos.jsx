@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from './clickVideos.module.css';
+import unescape from 'unescape';
+
 
 const ClickVideos = (props) => {
     return (
@@ -13,7 +15,7 @@ const ClickVideos = (props) => {
             frameBorder="0" allowFullScreen>
         </iframe>
         <div className={styles.title}>
-                <p className={styles.title}>{props.clickVideo.video.snippet.title}</p>
+                <p className={styles.title}>{props.clickVideo.video.snippet.title = unescape(props.clickVideo.video.snippet.title)}  </p>
             <p className={styles.channelTitle}>{props.clickVideo.video.snippet.channelTitle}</p>
         </div>
             <hr />

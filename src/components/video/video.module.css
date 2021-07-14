@@ -11,6 +11,10 @@
     width: 100%;
     border-radius: 5px;
 }
+.title {
+    height: 2rem;
+    overflow: hidden;
+}
 
 .text {
     padding: 0.3rem 0.1rem;

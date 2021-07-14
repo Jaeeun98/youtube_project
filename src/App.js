@@ -9,11 +9,14 @@ function App({ youtube }) {
   const [videos, setVideos] = useState([]);
   const [clickVideos, setClickVideos] = useState(null);
 
-
-  useEffect(() => {
+  const onLoad = () => {
     youtube
       .onLode() //
       .then(data => setVideos(data))
+  }
+
+  useEffect(() => {
+    onLoad();
   }, [])
 
   const onSearchList = text => {
@@ -30,6 +33,7 @@ function App({ youtube }) {
 
   const onMoveHome = () => {
     setClickVideos(null);
+    onLoad();
   }
 
   return (

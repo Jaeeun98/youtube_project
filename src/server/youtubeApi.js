@@ -14,7 +14,8 @@ class Youtube {
             params : {
                 part : 'snippet',
                 chart : 'mostPopular',
-                maxResults : '5'
+                maxResults: '5',
+                regionCode:'KR',
             }
         })
 
