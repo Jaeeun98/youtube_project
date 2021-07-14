@@ -28,7 +28,7 @@ function App({ youtube }) {
   }
 
   const onClickVideos = (video) => {
-    setClickVideos({video});
+    setClickVideos({ video });
   }
 
   const onMoveHome = () => {

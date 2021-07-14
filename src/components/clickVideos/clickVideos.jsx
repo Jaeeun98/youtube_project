@@ -1,23 +1,25 @@
 import React from 'react';
 import styles from './clickVideos.module.css';
 
-const ClickVideos = (props) => {
+const ClickVideos = ({ clickVideo: { video }, clickVideo: { video: { snippet }}}) => {
+
     return (
     <div className={styles.clickVideo}>
         <iframe
             id="ytplayer"
             type="text/html"
-            width="720"
-            height="405"
-            src={`https://www.youtube.com/embed/${props.clickVideo.video.id}`}
-            frameBorder="0" allowFullScreen>
+            
+            src={`https://www.youtube.com/embed/${video.id}`}
+            frameborder="0"
+            allowfullscreen
+        >
         </iframe>
         <div className={styles.title}>
-                <p className={styles.title}>{props.clickVideo.video.snippet.title}  </p>
-            <p className={styles.channelTitle}>{props.clickVideo.video.snippet.channelTitle}</p>
+                <p className={styles.title}>{snippet.title}  </p>
+            <p className={styles.channelTitle}>{snippet.channelTitle}</p>
         </div>
             <hr />
-        <pre className={styles.ex}>{props.clickVideo.video.snippet.description}</pre>
+        <pre className={styles.ex}>{snippet.description}</pre>
     </div>
     )
 }

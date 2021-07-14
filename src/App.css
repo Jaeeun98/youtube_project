@@ -79,10 +79,32 @@ li {
   .detail {
     width: 100%;
     margin-top:3rem;
+    padding-left: 0;
   }
   .detail li {
-    width: 20%;
-    margin-right:0.5rem
+    width: 30%;
   }
 }
+@media screen and (max-width:1024px) {
+  .detail li {
+    width: 45%;
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width:500px) {
+  .wrap {
+    width: 90%;
+    padding:0;
+  }
 
+  header {
+    padding:1rem;
+  }
+  section {
+    padding: 1rem;
+  }
+  .detail li {
+    width: 90%;
+    margin-bottom: 2rem;
+  }
+}

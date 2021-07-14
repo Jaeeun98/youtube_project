@@ -1,7 +1,7 @@
 .li {
     width: 20%;
     height:20%;
-    margin: 1rem;
+    margin: 0.1rem;
     color: #fff;
     font-size: 0.5rem;
     cursor: pointer;
@@ -25,4 +25,32 @@
 .channel {
     margin-top: 0.4rem;
     opacity: 0.5;
+}
+
+@media screen and (max-width:1200px) {
+    .li {
+        width:30%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .li {
+        width: 45%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .li {
+        width: 90%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .li {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
 }
