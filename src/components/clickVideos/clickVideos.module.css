@@ -1,6 +1,5 @@
 .clickVideo {
     width:70%;
-    color:#fff;
 }
 .clickVideo iframe {
     width: 100%;
@@ -16,7 +15,7 @@
 }
 hr {
     margin:1rem 0;
-    background-color: #fff;
+    background-color: #000;
     opacity: 0.1;
     border-radius: 20px;
 }

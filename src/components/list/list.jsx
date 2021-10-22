@@ -2,7 +2,7 @@ import React from 'react';
 import Video from '../video/video';
 import styles from './list.module.css';
 
-const List = (props) => {
+const List = props => {
     
     return (
         <ul className={styles.ul}>

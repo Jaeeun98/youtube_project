@@ -13,6 +13,7 @@ const Search = props => {
         <>
             <span className={styles.logo} onClick={() => props.onMoveHome()}>
                 <img src="img/logo.png" alt="logoImg" />
+                
             </span>
             <form className={styles.form} onSubmit={searchList}>
                 <input type="search" placeholder="search.." />
