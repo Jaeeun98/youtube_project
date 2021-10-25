@@ -9,18 +9,18 @@
     height:100%;
     margin: auto;
     border-radius: 20px;
-    padding: 1.5rem;
-    
+    padding: 1.5rem 0;
 }
 
 .main {
     display: flex;
     flex-wrap: wrap;
-    height:85%;
-    padding: 0 1rem;
+    height:100%;
+    padding:1rem;
     margin: 2rem 0;
     border-radius: 5px;
     overflow-y: scroll;
+    
 }
 .main::-webkit-scrollbar {
      opacity: 0;

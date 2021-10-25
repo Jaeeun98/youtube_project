@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router';
 import styles from './loading.module.css';
 
-const Loading = (props) => {
-
-    const history = useHistory();
+const Loading = ({ complete }) => {
 
     const [ ani, setAni ] = useState(null);
     const clickAni = () => {
@@ -13,10 +10,9 @@ const Loading = (props) => {
 
     const pageMove = (e) => {
         if (window.event.keyCode === 13){
-            history.push('/home')
+            complete(e.target.value)
         }   
     }
-    
 
     return(
         <div className={styles.loading}>
@@ -32,7 +28,6 @@ const Loading = (props) => {
                     <span>Click Me!</span>
                 </div>
             </div>
-            
         </div>
     )
     

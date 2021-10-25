@@ -2,18 +2,19 @@ import React from 'react';
 import styles from './search.module.css'
 
 const Search = props => {
-    
+
     const searchList = e => {
         e.preventDefault();
         props.onSearchList(e.target[0].value);
 
         e.target[0].value = '';
     }
+
     return (
         <>
             <span className={styles.logo} onClick={() => props.onMoveHome()}>
                 <img src="img/logo.png" alt="logoImg" />
-                
+                <span className={styles.youtube}>YOUTUBE</span>
             </span>
             <form className={styles.form} onSubmit={searchList}>
                 <input type="search" placeholder="search.." />

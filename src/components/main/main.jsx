@@ -1,17 +1,17 @@
-import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Switch, Route, useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import List from '../list/list';
 import Search from '../search/search';
 import ClickVideos from '../clickVideos/clickVideos';
 import NavBar from '../navBar/navBar';
 import styles from './main.module.css';
 
-const Main = ({ youtube }) => {
+const Main = ({ youtube, data }) => {
+
 
     const [videos, setVideos] = useState([]);
     const [clickVideos, setClickVideos] = useState(null);
-    const history = useHistory();
-
+    
     const onLoad = () => {
         youtube
             .onLode() //
@@ -19,7 +19,7 @@ const Main = ({ youtube }) => {
     }
 
     useEffect(() => {
-        onLoad();
+        onSearchList(data);
     }, [])
 
     const onSearchList = text => {
@@ -32,10 +32,10 @@ const Main = ({ youtube }) => {
 
     const onClickVideos = (video) => {
         setClickVideos({ video });
-        history.push('/video')
     }
 
     const onMoveHome = () => {
+
         setClickVideos(null);
         onLoad();
     }
@@ -50,13 +50,16 @@ const Main = ({ youtube }) => {
                 <main className={styles.main}>
                     <Router>
                         <Switch>
-                            <Route path='/home' exact>
-                                <div className={clickVideos ? 'detail' : 'list'}>
+                            <Route path='/' exact>
+                                <div className={styles.list}>
                                     <List videos={videos} onClickVideos={onClickVideos} />
                                 </div>
                             </Route>
-                            <Route path='/video'>
+                            <Route path='/clickVideo' exact>
                                 <ClickVideos clickVideo={clickVideos} />
+                                <div className={styles.detail}>
+                                    <List videos={videos} onClickVideos={onClickVideos} />
+                                </div>
                             </Route>
                         </Switch>
                     </Router>

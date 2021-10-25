@@ -1,22 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, useHistory } from 'react-router-dom';
 import Loading from './components/loading/loading';
 import Main from './components/main/main';
 
 function App({ youtube }) {
+  const [ loadingComplete, setLoadingComplete ] = useState(null);
+
+  const complete = (data) => {
+    setLoadingComplete(data)
+  }
+
+
   return (
     <div className="app">
-      <Router>
-        <Switch>
-          <Route path="/" exact>
-            <Loading />
-          </Route>
-          <Route path="/Home">
-            <Main youtube={youtube}/>
-          </Route>
-        </Switch>
-      </Router>
+      { loadingComplete ? <Main youtube={youtube} data={loadingComplete} /> : <Loading complete={complete}/> }
     </div>
   )
 }
