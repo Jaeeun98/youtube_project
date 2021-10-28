@@ -1,23 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import { light, dark } from './common/theme';
 import Loading from './components/loading/loading';
 import Main from './components/main/main';
 
 function App({ youtube }) {
-  const [ loadingComplete, setLoadingComplete ] = useState(null);
+  const [ loadingComplete, setLoadingComplete ] = useState(
+    () => JSON.parse(window.localStorage.getItem('searchKey') || null)
+  );
   const [theme, setTheme] = useState(light);
 
   const complete = (data) => {
-    setLoadingComplete(data)
+    setLoadingComplete(data);
   }
 
   const darkMode = () => {
     theme === light ? setTheme(dark) : setTheme(light);
-    console.log(theme);
   }
 
+  useEffect(() => {
+    window.localStorage.setItem('searchKey', JSON.stringify(loadingComplete));
+    console.log('d')
+  })
 
   return (
     <ThemeProvider theme={theme}>
