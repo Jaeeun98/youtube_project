@@ -21,7 +21,6 @@ function App({ youtube }) {
 
   useEffect(() => {
     window.localStorage.setItem('searchKey', JSON.stringify(loadingComplete));
-    console.log('d')
   })
 
   return (

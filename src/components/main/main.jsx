@@ -11,7 +11,7 @@ const Wrap = styled.section`
     background:${props => props.theme.backColor};
 `
 
-const Main = ({ youtube, data, darkMode }) => {
+const Main = ({ youtube, data, darkMode, }) => {
 
     const [videos, setVideos] = useState([]);
     const [clickVideos, setClickVideos] = useState(null);
@@ -39,7 +39,6 @@ const Main = ({ youtube, data, darkMode }) => {
     }
 
     const onMoveHome = () => {
-
         setClickVideos(null);
         onLoad();
     }

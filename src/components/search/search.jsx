@@ -16,18 +16,23 @@ const Icon = styled.div`
     color:${props => props.theme.textColor}
 `
 
-const Search = props => {
+const Search = ({ onSearchList, onMoveHome }) => {
 
     const searchList = e => {
         e.preventDefault();
-        props.onSearchList(e.target[0].value);
+        onSearchList(e.target[0].value);
 
         e.target[0].value = '';
     }
 
+    const moveHome = () => {
+        window.history.back();
+        onMoveHome();
+    }
+
     return (
         <>
-            <span className={styles.logo} onClick={() => props.onMoveHome()}>
+            <span className={styles.logo} onClick={moveHome}>
                 <img src="img/logo.png" alt="logoImg" />
                 <Span className={styles.youtube}>YOUTUBE</Span>
             </span>
