@@ -13,7 +13,6 @@ const List = props => {
             state : {
                 video
             }
-
         })
 
         props.onClickVideos();

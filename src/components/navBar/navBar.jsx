@@ -1,14 +1,19 @@
 import React from 'react';
 import styles from './navBar.module.css';
+import styled from 'styled-components';
 
+const Nav = styled.nav`
+    background : ${props => props.theme.pointColor};
+`
 
 const NavBar = (props) => {
+
     return (
-        <nav>
+        <Nav>
             <div className={styles.title}>MENU</div>
             <ul className={styles.menu}>
                 <li className={styles.li}>HOME</li>
-                <li className={styles.li}>DARK</li>
+                <li className={[styles.li, styles.darkBtn].join(' ')} onClick={props.darkMode}>DARK</li>
                 <li className={styles.li}>
                     <a href="https://github.com/Jaeeun98/youtube_project">
                         GIT
@@ -28,7 +33,7 @@ const NavBar = (props) => {
                 </li>
             </ul>
             
-        </nav>
+        </Nav>
     )
 }
 

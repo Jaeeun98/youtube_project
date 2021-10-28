@@ -1,12 +1,10 @@
 .clickVideo {
     width:70%;
+    padding:1rem;
 }
 .clickVideo iframe {
     width: 100%;
-    height:25vw;
-}
-.channelTitle {
-    opacity: 0.5;
+    height:35vw;
 }
 .clickVideo > div {
     margin-top:1rem;
@@ -22,9 +20,9 @@ hr {
 .ex {
     padding-right:1rem;
     line-height: 1.6;
-    opacity: 0.8;
     white-space:pre-wrap;
 }
+
 @media screen and (max-width:1200px) {
     .clickVideo {
         width: 100%;

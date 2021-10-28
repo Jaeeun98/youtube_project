@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import styles from './loading.module.css';
+import styled from 'styled-components';
+
+const BgDiv = styled.div`
+    background : ${props => props.theme.pointColor};
+`
 
 const Loading = ({ complete }) => {
 
@@ -15,7 +20,7 @@ const Loading = ({ complete }) => {
     }
 
     return(
-        <div className={styles.loading}>
+        <BgDiv className={styles.loading}>
             <div className={styles.search}>
             {ani && <div className={styles.title}>Youtube | Jaeeun@naver.com</div>}
                 <input className={ani ? [styles.input, styles.inputAni].join(' ') : styles.input} 
@@ -28,7 +33,7 @@ const Loading = ({ complete }) => {
                     <span>Click Me!</span>
                 </div>
             </div>
-        </div>
+        </BgDiv>
     )
     
 }

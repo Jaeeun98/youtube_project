@@ -1,7 +1,18 @@
 import React from 'react';
 import { useLocation } from 'react-router';
 import styles from './clickVideos.module.css';
+import styled from 'styled-components';
 
+const Pre = styled.pre`
+    color:${props => props.theme.subTextColor};
+`
+const Title = styled.p`
+    color:${props => props.theme.textColor};
+`
+
+const P = styled.p`
+    color:${props => props.theme.subTextColor};
+`
 
 const ClickVideos = () => {
     
@@ -21,15 +32,15 @@ const ClickVideos = () => {
             id="ytplayer"
             type="text/html"
             src={`https://www.youtube.com/embed/${location.state.video.id}`}
-            frameborder="0"
+            frameBorder="0"
         >
         </iframe>
         <div className={styles.title}>
-                <p className={styles.title}>{location.state.video.snippet.title}  </p>
-            <p className={styles.channelTitle}>{location.state.video.snippet.channelTitle}</p>
+                <Title>{location.state.video.snippet.title} </Title>
+            <P className={styles.channelTitle}>{location.state.video.snippet.channelTitle}</P>
         </div>
         <hr />
-        <pre className={styles.ex}>{location.state.video.snippet.description}</pre>
+        <Pre className={styles.ex}>{location.state.video.snippet.description}</Pre>
         <hr />
         <div id="disqus_thread"></div>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>

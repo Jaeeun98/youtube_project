@@ -5,9 +5,13 @@ import Search from '../search/search';
 import ClickVideos from '../clickVideos/clickVideos';
 import NavBar from '../navBar/navBar';
 import styles from './main.module.css';
+import styled from 'styled-components';
 
-const Main = ({ youtube, data }) => {
+const Wrap = styled.section`
+    background:${props => props.theme.backColor};
+`
 
+const Main = ({ youtube, data, darkMode }) => {
 
     const [videos, setVideos] = useState([]);
     const [clickVideos, setClickVideos] = useState(null);
@@ -41,8 +45,8 @@ const Main = ({ youtube, data }) => {
     }
 
     return(
-        <section className={styles.section}>
-            <NavBar />
+        <Wrap className={styles.section}>
+            <NavBar darkMode={darkMode} />
             <div className={styles.wrap}>
                 <header>
                     <Search onSearchList={onSearchList} onMoveHome={onMoveHome} />
@@ -65,7 +69,7 @@ const Main = ({ youtube, data }) => {
                     </Router>
                 </main>
              </div>
-        </section>
+        </Wrap>
         
     )
 }
