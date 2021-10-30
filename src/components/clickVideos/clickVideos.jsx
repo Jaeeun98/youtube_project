@@ -8,6 +8,7 @@ const Pre = styled.pre`
 `
 const Title = styled.p`
     color:${props => props.theme.textColor};
+    padding-bottom:0.5rem;
 `
 
 const P = styled.p`
@@ -36,7 +37,7 @@ const ClickVideos = () => {
         >
         </iframe>
         <div className={styles.title}>
-                <Title>{location.state.video.snippet.title} </Title>
+            <Title>{location.state.video.snippet.title} </Title>
             <P className={styles.channelTitle}>{location.state.video.snippet.channelTitle}</P>
         </div>
         <hr />

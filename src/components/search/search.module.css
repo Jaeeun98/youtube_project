@@ -40,4 +40,14 @@
     .youtube {
         display:none;
     }
+
+    .form input {
+        width:85%;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .logo {
+        display: none;
+    }
 }

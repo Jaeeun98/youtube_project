@@ -29,6 +29,8 @@ const Main = ({ youtube, data, darkMode, }) => {
     const onSearchList = text => {
         setClickVideos(null);
 
+        text && window.sessionStorage.setItem('searchKey', text);
+
         youtube
             .onSearch(text)
             .then(data => setVideos(data))
@@ -39,8 +41,11 @@ const Main = ({ youtube, data, darkMode, }) => {
     }
 
     const onMoveHome = () => {
+        window.sessionStorage.clear();
+
         setClickVideos(null);
         onLoad();
+        
     }
 
     return(

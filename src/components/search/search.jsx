@@ -6,6 +6,7 @@ import { FaSearch } from 'react-icons/fa';
 const Input = styled.input`
     border:none;
     border-bottom: 1px solid ${props => props.theme.textColor};
+    color : ${props => props.theme.textColor}
 `
 
 const Span = styled.span`
@@ -26,8 +27,8 @@ const Search = ({ onSearchList, onMoveHome }) => {
     }
 
     const moveHome = () => {
-        window.history.back();
         onMoveHome();
+        window.history.back();
     }
 
     return (
