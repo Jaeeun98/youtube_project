@@ -34,41 +34,12 @@
     border-radius: 5px;
     background-clip:padding-box;
 }
-
-.detail {
-    width:30%;
-}
-.detail li {
-    width:80%;
-    margin:0;
-    padding-bottom:1rem;
-}
   
-@media screen and (max-width:1200px) {
-    .detail {
-      width: 100%;
-      margin-top:3rem;
-      padding-left: 0;
-    }
-    .detail li {
-      width: 30%;
-    }
-}
-@media screen and (max-width:1024px) {
-    .detail li {
-      width: 45%;
-      margin-bottom: 2rem;
-    }
-}
+
 
 @media screen and (max-width:500px) {
     .wrap {
         width: 85%;
         
-    }
-
-    .detail li {
-        width: 90%;
-        margin-bottom: 2rem;
     }
 }

@@ -29,7 +29,7 @@ const Main = ({ youtube, data, darkMode, }) => {
     const onSearchList = text => {
         setClickVideos(null);
 
-        text && window.sessionStorage.setItem('searchKey', text);
+        window.sessionStorage.setItem('searchKey', text);
 
         youtube
             .onSearch(text)
@@ -45,7 +45,6 @@ const Main = ({ youtube, data, darkMode, }) => {
 
         setClickVideos(null);
         onLoad();
-        
     }
 
     return(
@@ -59,15 +58,10 @@ const Main = ({ youtube, data, darkMode, }) => {
                     <Router>
                         <Switch>
                             <Route path='/' exact>
-                                <div className={styles.list}>
-                                    <List videos={videos} onClickVideos={onClickVideos} />
-                                </div>
+                                <List videos={videos} onClickVideos={onClickVideos} />
                             </Route>
                             <Route path='/clickVideo' exact>
-                                <ClickVideos clickVideo={clickVideos} />
-                                <div className={styles.detail}>
-                                    <List videos={videos} onClickVideos={onClickVideos} />
-                                </div>
+                                <ClickVideos clickVideo={clickVideos} videos={videos} onClickVideos={onClickVideos}/>
                             </Route>
                         </Switch>
                     </Router>
