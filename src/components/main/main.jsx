@@ -51,7 +51,7 @@ const Main = ({ youtube, data, darkMode, }) => {
         <Wrap className={styles.section}>
             <NavBar darkMode={darkMode} />
             <div className={styles.wrap}>
-                <header>
+                <header className={styles.header}>
                     <Search onSearchList={onSearchList} onMoveHome={onMoveHome} />
                 </header>
                 <main className={styles.main}>
