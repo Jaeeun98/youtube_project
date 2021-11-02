@@ -1,14 +1,11 @@
 nav {
-    width:130px;
+    width:5%;
     height:100%;
     text-align: center;
     padding-top:40px;
     color:#fff;
 }
 
-.menu {
-    
-}
 .li, li a {
     color:#fff;
     padding : 0.5rem 0;
@@ -27,6 +24,7 @@ nav {
 @media screen and (max-width:800px) {
     nav {
         width:10%;
+        min-width: 2rem;
     }
     .li, li a {
         font-size: 0.8rem;

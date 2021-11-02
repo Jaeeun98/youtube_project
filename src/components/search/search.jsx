@@ -17,7 +17,7 @@ const Icon = styled.div`
     color:${props => props.theme.textColor}
 `
 
-const Search = ({ onSearchList, onMoveHome }) => {
+const Search = React.memo(({ onSearchList, onMoveHome }) => {
 
     const searchList = e => {
         e.preventDefault();
@@ -26,14 +26,9 @@ const Search = ({ onSearchList, onMoveHome }) => {
         e.target[0].value = '';
     }
 
-    const moveHome = () => {
-        onMoveHome();
-        window.history.back();
-    }
-
     return (
         <>
-            <span className={styles.logo} onClick={moveHome}>
+            <span className={styles.logo} onClick={onMoveHome}>
                 <img src="img/logo.png" alt="logoImg" />
                 <Span className={styles.youtube}>YOUTUBE</Span>
             </span>
@@ -47,6 +42,6 @@ const Search = ({ onSearchList, onMoveHome }) => {
             </form>
         </>
     );
-}
+})
 
 export default Search;

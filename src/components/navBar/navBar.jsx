@@ -9,29 +9,29 @@ const Nav = styled.nav`
     background : ${props => props.theme.pointColor};
 `
 
-const NavBar = (props) => {
+const NavBar = React.memo(({ onMoveHome, darkMode }) => {
 
     return (
         <Nav>
             <ul className={styles.menu}>
-                <li className={styles.li}>
+                <li className={styles.li} onClick={onMoveHome} title='HOME'>
                     <FaHome />
                 </li>
-                <li className={[styles.li, styles.darkBtn].join(' ')} onClick={props.darkMode}>
+                <li className={[styles.li, styles.darkBtn].join(' ')} onClick={darkMode} title='DarkMode'>
                     <FaMoon />
                 </li>
-                <li className={styles.li}>
+                <li className={styles.li} title='Github'>
                     <a href="https://github.com/Jaeeun98/youtube_project">
                         <FaGithub />
                     </a>
                 </li>
                 <hr />
-                <li className={styles.li}>
+                <li className={styles.li} title='Notion'>
                     <a href="https://octagonal-cartoon-4dc.notion.site/Jaeeun-Kwon-49358e4681924c6db594f1b7b5293c86">
                         <SiNotion />
                     </a>
                 </li>
-                <li className={styles.li}>
+                <li className={styles.li} title='Blog'>
                     <a href="https://blog.naver.com/jaeeun_98">
                         <FaBlogger />
                     </a>
@@ -40,6 +40,6 @@ const NavBar = (props) => {
             
         </Nav>
     )
-}
+})
 
 export default NavBar;

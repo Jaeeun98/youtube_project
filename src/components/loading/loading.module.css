@@ -32,12 +32,12 @@
 }
 
 .searchIcon {
-    width:50px;
+    font-size: 2rem;
+    margin:0.5rem;
 }
 
 .input {
-    width:0;
-    height:50px;
+    width:100%;
     background-color: #fff;
     opacity: 0;
     padding:1rem;
@@ -54,7 +54,9 @@
 }
 
 @keyframes boxAni {
-    0% {}
+    0% {
+
+    }
     100% {
         width:500px;
         height:50px;

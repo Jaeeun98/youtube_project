@@ -28,7 +28,8 @@ const Main = ({ youtube, data, darkMode, }) => {
 
     const onSearchList = text => {
         setClickVideos(null);
-
+        
+        window.sessionStorage.removeItem('searchKey');
         window.sessionStorage.setItem('searchKey', text);
 
         youtube
@@ -41,15 +42,17 @@ const Main = ({ youtube, data, darkMode, }) => {
     }
 
     const onMoveHome = () => {
-        window.sessionStorage.clear();
-
+        window.sessionStorage.removeItem('searchKey');
+        window.history.back();
         setClickVideos(null);
-        onLoad();
+
+        !clickVideos && onLoad();
+ 
     }
 
     return(
         <Wrap className={styles.section}>
-            <NavBar darkMode={darkMode} />
+            <NavBar darkMode={darkMode} onMoveHome={onMoveHome} />
             <div className={styles.wrap}>
                 <header className={styles.header}>
                     <Search onSearchList={onSearchList} onMoveHome={onMoveHome} />
