@@ -7,7 +7,7 @@ import Main from './components/main/main';
 
 function App({ youtube }) {
   const [ loadingComplete, setLoadingComplete ] = useState(
-    () => JSON.parse(window.sessionStorage.getItem('searchKey') || null)
+    () => window.sessionStorage.getItem('searchKey') || null
   );
   const [theme, setTheme] = useState(light);
 
@@ -21,7 +21,7 @@ function App({ youtube }) {
 
   useEffect(() => {
     window.sessionStorage.setItem('searchKey', JSON.stringify(loadingComplete));
-  })
+  },[loadingComplete])
 
   return (
     <ThemeProvider theme={theme}>

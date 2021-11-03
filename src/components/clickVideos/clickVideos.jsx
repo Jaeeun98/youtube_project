@@ -32,6 +32,7 @@ const ClickVideos = ({ videos, onClickVideos }) => {
         <>
             <div className={styles.clickVideo}>
                 <iframe
+                    title='clickVideo'
                     id="ytplayer"
                     type="text/html"
                     src={`https://www.youtube.com/embed/${location.state.video.id}`}

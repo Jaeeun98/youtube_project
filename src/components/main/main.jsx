@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import List from '../list/list';
 import Search from '../search/search';
@@ -11,22 +11,12 @@ const Wrap = styled.section`
     background:${props => props.theme.backColor};
 `
 
-const Main = ({ youtube, data, darkMode, }) => {
+const Main = ({ youtube, data, darkMode }) => {
 
     const [videos, setVideos] = useState([]);
-    const [clickVideos, setClickVideos] = useState(null);
+    const [clickVideos, setClickVideos] = useState([]);
     
-    const onLoad = () => {
-        youtube
-            .onLode() //
-            .then(data => setVideos(data))
-    }
-
-    useEffect(() => {
-        onSearchList(data);
-    }, [])
-
-    const onSearchList = text => {
+    const onSearchList = useCallback(text => {
         setClickVideos(null);
         
         window.sessionStorage.removeItem('searchKey');
@@ -35,20 +25,29 @@ const Main = ({ youtube, data, darkMode, }) => {
         youtube
             .onSearch(text)
             .then(data => setVideos(data))
-    }
+    }, [youtube])
+
+    useEffect(() => {
+        onSearchList(data);
+    }, [data, onSearchList])
 
     const onClickVideos = (video) => {
         setClickVideos({ video });
     }
 
-    const onMoveHome = () => {
+    const onMoveHome = useCallback(() => {
+        const onLoad = () => {
+            youtube
+                .onLode() //
+                .then(data => setVideos(data))
+        }
+
         window.sessionStorage.removeItem('searchKey');
         window.history.back();
         setClickVideos(null);
 
         !clickVideos && onLoad();
- 
-    }
+    }, [clickVideos, youtube])
 
     return(
         <Wrap className={styles.section}>
