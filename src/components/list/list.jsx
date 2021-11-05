@@ -10,7 +10,6 @@ const List = props => {
                 <Video
                     video={video}
                     key={typeof video.id === 'object' ? video.id = video.id.videoId : video.id}
-                    onClickVideos={props.onClickVideos}
                 />
             ))}
         </ul>

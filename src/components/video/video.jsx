@@ -14,7 +14,7 @@ const SubP = styled.p`
   color:${props => props.theme.subTextColor}
 `
 
-const Video = ({ onClickVideos, video, video: {snippet}}) => (
+const Video = ({ searchTitle, video, video: {snippet}}) => (
   
   <Li className={styles.li} >
     <Link to={{

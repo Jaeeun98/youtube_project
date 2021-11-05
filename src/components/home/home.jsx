@@ -17,16 +17,14 @@ const Home = ({ youtube, darkMode }) => {
 
     const location = useLocation();
     const history = useHistory();
-    console.log(videos)
 
-    const onLoad = () => {
+    const onLoad = useCallback(() => {
         youtube
             .onLode() //
             .then(data => setVideos(data))
-    }
+    }, [youtube])
     
     const onSearchList = useCallback(text => {
-
         youtube
             .onSearch(text)
             .then(data => setVideos(data))
@@ -41,10 +39,8 @@ const Home = ({ youtube, darkMode }) => {
     }, [])
 
     const onMoveHome = useCallback(() => {
-        
         onLoad();
         history.push('/home');
-        
     }, [])
 
     return(
