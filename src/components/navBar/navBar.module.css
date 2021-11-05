@@ -6,14 +6,14 @@ nav {
     color:#fff;
 }
 
-.li, li a {
+.li, .li .a {
     color:#fff;
     padding : 0.5rem 0;
     transition: color 0.5s;
     font-size: 1.3rem;
 }
 
-.li a:hover {
+.li .a:hover {
     color:#eee;
 }
 
@@ -26,7 +26,7 @@ nav {
         width:10%;
         min-width: 2rem;
     }
-    .li, li a {
+    .li, .li .a {
         font-size: 0.8rem;
     }
 }

@@ -11,12 +11,11 @@ const Title = styled.p`
     color:${props => props.theme.textColor};
     padding-bottom:0.5rem;
 `
-
 const P = styled.p`
     color:${props => props.theme.subTextColor};
 `
 
-const ClickVideos = ({ videos, onClickVideos }) => {
+const ClickVideos = ({ videos }) => {
     
     const location = useLocation();
 
@@ -27,7 +26,6 @@ const ClickVideos = ({ videos, onClickVideos }) => {
         (d.head || d.body).appendChild(s);
         })();
 
-        
     return (
         <>
             <div className={styles.clickVideo}>
@@ -50,7 +48,7 @@ const ClickVideos = ({ videos, onClickVideos }) => {
                 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             </div>
             <div className={styles.detail}>
-                <List videos={videos} onClickVideos={onClickVideos} />
+                <List videos={videos} />
             </div>
         </>
     )

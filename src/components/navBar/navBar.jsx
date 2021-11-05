@@ -10,7 +10,6 @@ const Nav = styled.nav`
 `
 
 const NavBar = React.memo(({ onMoveHome, darkMode }) => {
-
     return (
         <Nav>
             <ul className={styles.menu}>
@@ -21,18 +20,18 @@ const NavBar = React.memo(({ onMoveHome, darkMode }) => {
                     <FaMoon />
                 </li>
                 <li className={styles.li} title='Github'>
-                    <a href="https://github.com/Jaeeun98/youtube_project">
+                    <a className={styles.a} href="https://github.com/Jaeeun98/youtube_project">
                         <FaGithub />
                     </a>
                 </li>
                 <hr />
                 <li className={styles.li} title='Notion'>
-                    <a href="https://octagonal-cartoon-4dc.notion.site/Jaeeun-Kwon-49358e4681924c6db594f1b7b5293c86">
+                    <a className={styles.a} href="https://octagonal-cartoon-4dc.notion.site/Jaeeun-Kwon-49358e4681924c6db594f1b7b5293c86">
                         <SiNotion />
                     </a>
                 </li>
                 <li className={styles.li} title='Blog'>
-                    <a href="https://blog.naver.com/jaeeun_98">
+                    <a className={styles.a} href="https://blog.naver.com/jaeeun_98">
                         <FaBlogger />
                     </a>
                 </li>

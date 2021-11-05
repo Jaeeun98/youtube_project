@@ -1,32 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import { ThemeProvider } from 'styled-components';
 import { light, dark } from './common/theme';
 import Loading from './components/loading/loading';
-import Main from './components/main/main';
+import Home from './components/home/home';
 
 function App({ youtube }) {
-  const [ loadingComplete, setLoadingComplete ] = useState(
-    () => window.sessionStorage.getItem('searchKey') || null
-  );
   const [theme, setTheme] = useState(light);
 
-  const complete = (data) => {
-    setLoadingComplete(data);
-  }
-
-  const darkMode = () => {
+  const darkMode = useCallback(() => {
     theme === light ? setTheme(dark) : setTheme(light);
-  }
-
-  useEffect(() => {
-    window.sessionStorage.setItem('searchKey', JSON.stringify(loadingComplete));
-  },[loadingComplete])
+  }, [theme])
 
   return (
     <ThemeProvider theme={theme}>
       <div className="app">
-        {loadingComplete ? <Main youtube={youtube} data={loadingComplete} darkMode={darkMode}/> : <Loading complete={complete} />}
+        <Router>
+          <Switch>
+            <Route path='/' exact>
+              <Loading />
+            </Route>
+            <Route path='/home' >
+              <Home youtube={youtube} darkMode={darkMode} />
+            </Route>
+          </Switch>
+        </Router>
       </div>
     </ThemeProvider>
     

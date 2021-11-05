@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './loading.module.css';
 import styled from 'styled-components';
 import { FaSearch } from 'react-icons/fa';
+import { useHistory } from 'react-router';
 
 const BgDiv = styled.div`
     background : ${props => props.theme.pointColor};
@@ -10,13 +11,20 @@ const BgDiv = styled.div`
 const Loading = ({ complete }) => {
 
     const [ ani, setAni ] = useState(null);
+    const history = useHistory();
+
     const clickAni = () => {
         setAni(true);
     }
 
     const pageMove = (e) => {
         if (window.event.keyCode === 13){
-            complete(e.target.value)
+            history.push({
+                pathname: '/home',
+                state : {
+                    searchData : e.target.value
+                }
+            })
         }   
     }
 
